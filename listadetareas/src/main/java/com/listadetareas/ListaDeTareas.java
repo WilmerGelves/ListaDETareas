@@ -53,7 +53,18 @@ public class ListaDeTareas {
                         System.out.println( "\t-> " + compromiso);
                     }
                 }
-            } 
+            }
+            sc.nextLine();//Formateo del buffer.
+
+            System.out.println("Ingrese la tarea que desea eliminar: ");
+            tarea = sc.nextLine().toLowerCase().trim();
+            if (tareas.contains(tarea)) {
+                tareas.remove(tarea);
+                System.out.println("Tarea eliminada.");
+            }else{
+                System.out.println("Tarea no encontrada.");
+            }
+            
             sc.close();
         } catch (Exception e) {
             System.out.println("Valor no válido,intente nuevamente.");
